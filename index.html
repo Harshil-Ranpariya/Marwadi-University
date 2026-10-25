@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Scrollspy</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section[id] {
+            scroll-margin-top: 70px;
+        }
+
+        /* Image Gallery */
+        .gallery-card {
+            height: 100%;
+            overflow: hidden;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .gallery-img {
+            display: block;
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .gallery-card .card-body {
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .gallery-card .card-body h5 {
+            margin: 0;
+        }
+
+        /* Recruiter Logos */
+        .recruiter-logo {
+            width: 100%;
+            height: 55px;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        /* Responsive Images */
+        @media (max-width: 767.98px) {
+            .gallery-img {
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .gallery-img {
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="80" tabindex="0">
+
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#vision">Marwadi University</a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarMenu"
+                    aria-controls="navbarMenu"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#vision">Vision</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#mission">Mission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pso">PSO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#courses">Course Offered</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Image Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#recruiters">Top Recruiters</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Vision -->
+    <section id="vision" class="bg-primary text-white min-vh-100 d-flex align-items-center">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-12 col-md-10 col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">Vision</h1>
+                    <p class="lead">
+                        To empower learners in Computer Engineering through quality education,
+                        advanced technology, innovation, ethical research, and industry-aligned
+                        training for global and societal impact.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission -->
+    <section id="mission" class="bg-light py-5 min-vh-100 d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="display-6 fw-bold text-success mb-4">Mission</h2>
+                </div>
+
+                <div class="col-12 mb-4">
+                    <div class="d-flex align-items-start gap-3">
+                        <span class="badge bg-success rounded-circle fs-6">1</span>
+                        <p class="mb-0 fs-5">
+                            Deliver quality Computer Engineering education through ICT-enabled
+                            pedagogies that foster critical thinking and lifelong learning.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-12 mb-4">
+                    <div class="d-flex align-items-start gap-3">
+                        <span class="badge bg-success rounded-circle fs-6">2</span>
+                        <p class="mb-0 fs-5">
+                            Promote innovation, entrepreneurship, and problem-solving through
+                            hands-on projects and industry collaboration.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-12 mb-4">
+                    <div class="d-flex align-items-start gap-3">
+                        <span class="badge bg-success rounded-circle fs-6">3</span>
+                        <p class="mb-0 fs-5">
+                            Foster ethical research and interdisciplinary learning to address
+                            global and societal challenges.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="d-flex align-items-start gap-3">
+                        <span class="badge bg-success rounded-circle fs-6">4</span>
+                        <p class="mb-0 fs-5">
+                            Equip students with technical expertise and a global outlook to
+                            thrive in dynamic technological environments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PSO -->
+    <section id="pso" class="bg-success text-white py-5 min-vh-100 d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="display-6 fw-bold mb-5">
+                        Program Specific Outcomes (PSO)
+                    </h2>
+                </div>
+
+                <div class="col-12 mb-4">
+                    <div class="card text-dark shadow">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-success">
+                                PSO 1 - Application Development Proficiency
+                            </h5>
+                            <p class="card-text">
+                                Design, develop, and deploy web and mobile applications using
+                                modern tools, engineering practices, and professional standards.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card text-dark shadow">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-success">
+                                PSO 2 - Research &amp; Emerging Technology Integration
+                            </h5>
+                            <p class="card-text">
+                                Apply and explore advanced technologies such as AI, IoT, Cloud,
+                                and Data Analytics for innovative and research-oriented
+                                computing solutions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Offered -->
+    <section id="courses" class="bg-warning py-5">
+        <div class="container">
+            <h2 class="display-6 fw-bold text-center mb-5">Courses Offered</h2>
+
+            <div class="row g-4">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="fs-1 mb-3">💻</div>
+                            <h5 class="card-title fw-bold">Computer Science &amp; Engineering</h5>
+                            <p class="card-text">
+                                Software development, algorithms, databases, and core software engineering.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="fs-1 mb-3">🤖</div>
+                            <h5 class="card-title fw-bold">
+                                Computer Science &amp; Engineering Artificial Intelligence
+                            </h5>
+                            <p class="card-text">
+                                Artificial intelligence, machine learning, deep learning,
+                                computer vision, and intelligent systems.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="fs-1 mb-3">📊</div>
+                            <h5 class="card-title fw-bold">
+                                Computer Science &amp; Engineering (AI &amp; DS)
+                            </h5>
+                            <p class="card-text">
+                                Artificial intelligence, data science, machine learning,
+                                big data analytics, and data-driven solutions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="fs-1 mb-3">🔐</div>
+                            <h5 class="card-title fw-bold">
+                                Computer Science &amp; Engineering Cyber Security
+                            </h5>
+                            <p class="card-text">
+                                Cybersecurity, network security, ethical hacking,
+                                digital forensics, and information protection.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="fs-1 mb-3">📡</div>
+                            <h5 class="card-title fw-bold">
+                                Information &amp; Communication Technology
+                            </h5>
+                            <p class="card-text">
+                                Information technology, communication systems, networking,
+                                software applications, and digital infrastructure.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="fs-1 mb-3">🧬</div>
+                            <h5 class="card-title fw-bold">Bioinformatics</h5>
+                            <p class="card-text">
+                                Biological data analysis, genomics, computational biology,
+                                data science, and healthcare informatics.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="fs-1 mb-3">⚗️</div>
+                            <h5 class="card-title fw-bold">Chemical Engineering</h5>
+                            <p class="card-text">
+                                Chemical processes, reactor design, process control,
+                                and safety engineering.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="fs-1 mb-3">🏗️</div>
+                            <h5 class="card-title fw-bold">Civil Engineering</h5>
+                            <p class="card-text">
+                                Structural analysis, construction management,
+                                transportation engineering, and water resources.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section id="gallery" class="bg-info py-5">
+        <div class="container">
+            <h2 class="display-6 fw-bold text-white text-center mb-5">Image Gallery</h2>
+
+            <div class="row g-4">
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card gallery-card shadow">
+                        <img src="images/gym.png"
+                             class="card-img-top gallery-img"
+                             alt="Gym"
+                             loading="lazy">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Gym</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card gallery-card shadow">
+                        <img src="images/movie-promotion.jpg"
+                             class="card-img-top gallery-img"
+                             alt="Movie Promotion"
+                             loading="lazy">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Movie Promotion</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card gallery-card shadow">
+                        <img src="images/sports.png"
+                             class="card-img-top gallery-img"
+                             alt="Sports"
+                             loading="lazy">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Sports</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card gallery-card shadow">
+                        <img src="images/convocation.jpg"
+                             class="card-img-top gallery-img"
+                             alt="Convocation"
+                             loading="lazy">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Convocation</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card gallery-card shadow">
+                        <img src="images/mu-fest.jpg"
+                             class="card-img-top gallery-img"
+                             alt="MU Fest"
+                             loading="lazy">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">MU Fest</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card gallery-card shadow">
+                        <img src="images/library.jpg"
+                             class="card-img-top gallery-img"
+                             alt="Library"
+                             loading="lazy">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Library</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Recruiters -->
+    <section id="recruiters" class="bg-light py-5">
+        <div class="container">
+            <h2 class="display-6 fw-bold text-center mb-5">Top Recruiters</h2>
+
+            <div class="row g-4">
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 text-center shadow-sm">
+                        <div class="card-body">
+                            <img src="images/Reliance-Industries.png" class="recruiter-logo mb-3" alt="Reliance Industries" loading="lazy">
+                            <h5 class="fw-bold">Reliance Industries</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 text-center shadow-sm">
+                        <div class="card-body">
+                            <img src="images/Adani.png" class="recruiter-logo mb-3" alt="Adani" loading="lazy">
+                            <h5 class="fw-bold">Adani</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 text-center shadow-sm">
+                        <div class="card-body">
+                            <img src="images/Asian-Paints.jpg" class="recruiter-logo mb-3" alt="Asian Paints" loading="lazy">
+                            <h5 class="fw-bold">Asian Paints</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 text-center shadow-sm">
+                        <div class="card-body">
+                            <img src="images/Zomato.png" class="recruiter-logo mb-3" alt="Zomato" loading="lazy">
+                            <h5 class="fw-bold">Zomato</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 text-center shadow-sm">
+                        <div class="card-body">
+                            <img src="images/Flipkart.png" class="recruiter-logo mb-3" alt="Flipkart" loading="lazy">
+                            <h5 class="fw-bold">Flipkart</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 text-center shadow-sm">
+                        <div class="card-body">
+                            <img src="images/Zydus-Lifesciences.jpg" class="recruiter-logo mb-3" alt="Zydus Lifesciences" loading="lazy">
+                            <h5 class="fw-bold">Zydus Lifesciences</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 text-center shadow-sm">
+                        <div class="card-body">
+                            <img src="images/Uno-Minda.jpg" class="recruiter-logo mb-3" alt="Uno Minda" loading="lazy">
+                            <h5 class="fw-bold">Uno Minda</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 text-center shadow-sm">
+                        <div class="card-body">
+                            <img src="images/techmahindra.png" class="recruiter-logo mb-3" alt="Tech Mahindra" loading="lazy">
+                            <h5 class="fw-bold">Tech Mahindra</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 text-center shadow-sm">
+                        <div class="card-body">
+                            <img src="images/Fintech-Global-Center.jpg" class="recruiter-logo mb-3" alt="Fintech Global Center" loading="lazy">
+                            <h5 class="fw-bold">Fintech Global Center</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 text-center shadow-sm">
+                        <div class="card-body">
+                            <img src="images/HDFC-Bank.png" class="recruiter-logo mb-3" alt="HDFC Bank" loading="lazy">
+                            <h5 class="fw-bold">HDFC Bank</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 text-center shadow-sm">
+                        <div class="card-body">
+                            <img src="images/Nasdaq.png" class="recruiter-logo mb-3" alt="Nasdaq" loading="lazy">
+                            <h5 class="fw-bold">Nasdaq</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 text-center shadow-sm">
+                        <div class="card-body">
+                            <img src="images/google.png" class="recruiter-logo mb-3" alt="Google" loading="lazy">
+                            <h5 class="fw-bold">Google</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+
+                <div class="col-12 col-md-6 col-lg-5">
+                    <h4 class="fw-bold">Faculty of Computer Engineering</h4>
+                    <p class="text-secondary">
+                        Marwadi University - Shaping future computer engineers through
+                        innovation, practical learning, and industry-driven education.
+                    </p>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h4 class="fw-bold">Quick Links</h4>
+                    <div class="d-flex flex-column gap-2">
+                        <a href="#vision" class="text-white text-decoration-none">Vision</a>
+                        <a href="#mission" class="text-white text-decoration-none">Mission</a>
+                        <a href="#pso" class="text-white text-decoration-none">PSO</a>
+                        <a href="#courses" class="text-white text-decoration-none">Courses</a>
+                        <a href="#gallery" class="text-white text-decoration-none">Gallery</a>
+                        <a href="#recruiters" class="text-white text-decoration-none">Recruiters</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-12 col-lg-4">
+                    <h4 class="fw-bold">Contact Information</h4>
+                    <p class="text-secondary">
+                        Marwadi University, Rajkot-Morbi Highway, Rajkot, Gujarat 360003
+                        <br><br>
+                        Email: ce-pg@marwadieducation.edu.in
+                        <br>
+                        Phone: +91 281 7123456
+                    </p>
+                </div>
+
+            </div>
+
+            <hr class="border-secondary">
+
+            <div class="row">
+                <div class="col-12 col-md-6 text-center text-md-start">
+                    <p class="mb-0">
+                        &copy; Marwadi University. All Rights Reserved, 2026
+                    </p>
+                </div>
+
+                <div class="col-12 col-md-6 text-center text-md-end">
+                    <p class="mb-0">
+                        Privacy Policy | Terms &amp; Conditions | Sitemap
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
